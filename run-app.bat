@@ -1,0 +1,1 @@
+java -jar out/artifacts/myDictionary_jar/myDictionary.jar
