@@ -41,6 +41,6 @@ public class Application {
         System.out.println(word);
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        System.out.println(meaning + "\n__________________\n");
+        System.out.println(meaning + "\n_____________________\n");
     }
 }
