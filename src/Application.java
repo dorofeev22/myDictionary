@@ -14,14 +14,25 @@ public class Application {
 
     private static final String TAB = "\\t";
     private static Set<Long> DURATION_IN_DAYS = new HashSet<>(Arrays.asList(1L, 3L, 7L, 30L, 90L, 180L, 365L));
+    private static boolean nothingToRepeatToday = true;
+    private static final String SEE_YOU = "Will see you next time.";
 
     public static void main(String[] args) {
         findWordByDictionary(0, 1); // word index of line as a words array -> en, ru
         findWordByDictionary(1, 0); // word index of line as a words array -> ru. en
+        if (nothingToRepeatToday) {
+            System.out.print("\nNothing to repeat today. " + SEE_YOU);
+            Scanner scanner = new Scanner(System.in);
+            scanner.nextLine();
+        } else {
+            System.out.print("\nGood job! " + SEE_YOU);
+            Scanner scanner = new Scanner(System.in);
+            scanner.nextLine();
+        }
     }
 
     private static void findWordByDictionary(int first, int second) {
-        try (Stream<String> stream = Files.lines(Paths.get("dictionary.txt"), Charset.forName("utf8"))) {
+        try (Stream<String> stream = Files.lines(Paths.get("C:\\myDictionary\\dictionary.txt"), Charset.forName("utf8"))) {
             stream.filter(r -> checkRecordDuration(r.split(TAB)[2])).forEach(r -> printWordAndMeaning(r.split(TAB)[first], r.split(TAB)[second]));
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,9 +49,10 @@ public class Application {
     }
 
     private static void printWordAndMeaning(String word, String meaning) {
-        System.out.println(word);
+        nothingToRepeatToday = false;
+        System.out.print(word);
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        System.out.println(meaning + "\n_____________________\n");
+        System.out.print(meaning + "\n-------------------\n");
     }
 }
