@@ -53,6 +53,6 @@ public class Application {
         System.out.print(word);
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        System.out.print(meaning + "\n---------------!!---\n");
+        System.out.print(meaning + "\n-------!!--------!!---\n");
     }
 }
