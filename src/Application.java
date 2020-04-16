@@ -21,7 +21,7 @@ public class Application {
         findWordByDictionary(0, 1); // word index of line as a words array -> en, ru
         findWordByDictionary(1, 0); // word index of line as a words array -> ru. en
         if (nothingToRepeatToday) {
-            System.out.print("\nNothing to repeat today. " + SEE_YOU);
+            System.out.print("\nNothing to repeat today.  " + SEE_YOU);
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
         } else {
@@ -53,6 +53,6 @@ public class Application {
         System.out.print(word);
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        System.out.print(meaning + "\n-------------------\n");
+        System.out.print(meaning + "\n-------!!--------!!---\n");
     }
 }
