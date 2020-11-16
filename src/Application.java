@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 public class Application {
 
     private static final String TAB = "\\t";
-    private static final Set<Long> DURATION_IN_DAYS = new HashSet<>(Arrays.asList(1L, 3L, 7L, 30L, 90L, 180L, 365L, 545L));
+    private static final Set<Long> DURATION_IN_DAYS = new HashSet<>(Arrays.asList(1L, 3L, 7L, 30L, 90L, 180L, 365L, 545L, 730L, 913L, 1095L));
     private static boolean nothingToRepeatToday = true;
     private static final String SEE_YOU = "Will see you next time.";
 
